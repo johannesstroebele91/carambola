@@ -1,95 +1,120 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+"use client";
+// TODO use modules if css is necessary: import styles from './page.module.css'
+import React from "react";
+import {Layout, Menu, Typography, Space, Table, Progress, Row, Col, Card} from "antd";
+import Title from "antd/es/typography/Title";
+import moment from "moment";
+import {DailyHabits} from "@/app/Habits/DailyHabits";
+import {WeeklyHabits} from "@/app/Habits/WeeklyHabits";
+
+const { Header, Content, Footer } = Layout;
+const { Text, Link, Paragraph } = Typography;
 
 export default function Home() {
-  return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+    const menuItems = [
+        {
+            key: "caramaa",
+            label: "caramaa",
+        },
+    ];
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+    /* TODO fix later
+    const randomQuoteId = Math.floor(Math.random() * 10) + 1;
+       function formatDuration(minutes: number): string {
+           const hours = Math.floor(minutes / 60);
+           const remainingMinutes = minutes % 60;
+           const formattedMinutes =
+               remainingMinutes < 10 ? `0${remainingMinutes}` : `${remainingMinutes}`;
+           return `${hours}:${formattedMinutes}`;
+       }
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
+       const columns: ColumnsType<RowType> = [
+           {
+               title: "Rank",
+               dataIndex: "rank",
+               key: "rank",
+               width: 80,
+           },
+           {
+               title: "Name",
+               dataIndex: "name",
+               key: "name",
+               render: (text) => (
+                   <Link href="https://link-to-profile-page.de" target="_blank">
+                       {text}
+                   </Link>
+               ),
+               width: 150,
+           },
+           {
+               title: "Workout Time",
+               dataIndex: "workoutTimeInMinutes",
+               key: "workoutTimeInMinutes",
+               width: 100,
+           },
+       ];
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
+       interface RowType {
+           rank: number;
+           name: string;
+           workoutTimeInMinutes: string;
+       }
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
-}
+       const rows: RowType[] = [
+           {
+               rank: 1,
+               name: "John Brown",
+               workoutTimeInMinutes: formatDuration(90),
+           },
+           {
+               rank: 2,
+               name: "Jim Green",
+               workoutTimeInMinutes: formatDuration(60),
+           },
+           {
+               rank: 3,
+               name: "Joe Black",
+               workoutTimeInMinutes: formatDuration(30),
+           },
+       ]; */
+
+    return (
+        <Layout>
+            <Header style={{ position: "sticky", top: 0, zIndex: 1, width: "100%" }}>
+                <Menu
+                    theme="dark"
+                    mode="horizontal"
+                    defaultSelectedKeys={["home"]}
+                    items={menuItems}
+                />
+            </Header>
+            <Content className="site-layout" style={{ padding: "0 50px" }}>
+                {/* TODO fix breadcrumb later
+            <Breadcrumb style={{ margin: "16px 0" }}>
+              <Breadcrumb.Item>Home</Breadcrumb.Item>
+              <Breadcrumb.Item>List</Breadcrumb.Item>
+              <Breadcrumb.Item>App</Breadcrumb.Item>
+            </Breadcrumb> */}
+
+                {/* TODO fix later quotes <Space style={{ paddingBottom: 18 }}>
+                    <Text italic>{quotes[randomQuoteId].quote}</Text>
+                    <Text strong>{quotes[randomQuoteId].author}</Text>
+                </Space>*/}
+                {/*<Table columns={columns} dataSource={rows} />*/}
+                <Row gutter={[16, 24]}>
+                    <Col span={17}>
+                        <Title>Hey there, Michelle!</Title>
+                        <WeeklyHabits/>
+                    </Col>
+                    <Col span={7}>
+                        <DailyHabits/>
+                    </Col>
+                </Row>
+            </Content>
+            <Footer style={{ textAlign: "center" }}>
+                Johannes Ströbele ©2023, all rights reserved
+            </Footer>
+        </Layout>
+    );
+};
