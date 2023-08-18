@@ -3,3 +3,10 @@ export interface Quote {
     author: string;
     quote: string;
 }
+
+export interface Habit {
+    id: number;
+    name: string;
+    done: boolean;
+    doneAt?: Date;
+}
