@@ -11,11 +11,11 @@ export const Quotes = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetch("/api/quotes");
+            const response = await fetch("/api/quote");
             const data: Quote[] = await response.json();
             setQuotes(data);
         };
-        fetchData().then((r) => console.log(r));
+        fetchData().then(() => console.log('Fetched quotes successfully')); // TODO delete later
     }, []);
 
     if (!quotes) {

@@ -54,14 +54,6 @@ const getQuotes: Quote[] = [
         quote: "Don't eat more than 1 portion (if more, it's easy to fall into a pit).",
     }
 ];
-export const quotes = (
-    req: NextApiRequest,
-    res: NextApiResponse<Quote[]>
-) => {
-    res.status(200).json(getQuotes);
-}
-
-
 // eslint-disable-next-line import/no-anonymous-default-export
 export default async (
     req: NextApiRequest,
