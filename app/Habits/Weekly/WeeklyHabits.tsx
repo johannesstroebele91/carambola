@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
 import {Card, Col, Divider, Row, Space, Typography} from "antd";
-import {WeeklyProgressRowData} from "@/app/Habits/WeeklyProgressRowData";
-import {WeeklyProgressColDef} from "@/app/Habits/WeeklyProgressColDef";
+import {WeeklyProgressRowData} from "@/app/Habits/Weekly/WeeklyProgressRowData";
+import {WeeklyProgressColDef} from "@/app/Habits/Weekly/WeeklyProgressColDef";
 
 const {Text} = Typography;
 
