@@ -5,24 +5,20 @@ const getHabits: Habit[] = [
     {
         id: 1,
         name: "Gym",
-        done: true,
-        doneAt: new Date(),
+        done: new Date(),
     },
     {
         id: 2,
         name: "Powernap",
-        done: true,
-        doneAt: new Date(),
+        done: new Date(),
     }, {
         id: 3,
         name: "Drink water",
-        done: false,
-        doneAt: undefined,
+        done: undefined,
     }, {
         id: 4,
         name: "Powernap",
-        done: false,
-        doneAt: undefined,
+        done: undefined,
     },
 ];
 // eslint-disable-next-line import/no-anonymous-default-export

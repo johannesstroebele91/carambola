@@ -7,6 +7,5 @@ export interface Quote {
 export interface Habit {
     id: number;
     name: string;
-    done: boolean;
-    doneAt?: Date;
+    done?: Date;
 }

@@ -11,7 +11,7 @@ interface DailyHabitProps {
 export const DailyHabit = ({habit}: DailyHabitProps) => {
 
     const Buttons = (): React.JSX.Element => {
-        if (!habit.done) {
+        if (habit.done) {
             return (<Row>
                 <Col span={12}>
                     <Button><CheckOutlined style={{color: 'blue'}}/>Completed</Button>
