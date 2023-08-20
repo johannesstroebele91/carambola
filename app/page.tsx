@@ -2,14 +2,10 @@
 // use client is needed for importing typographie
 // TODO use modules if css is necessary: import styles from './page.module.css'
 import React from "react";
-import {Col, Layout, Menu, Row} from "antd";
-import Title from "antd/es/typography/Title";
-import {DailyHabits} from "@/app/Habits/Daily/DailyHabits";
-import {WeeklyHabits} from "@/app/Habits/Weekly/WeeklyHabits";
-import {Quotes} from "@/app/Quotes";
+import {Layout, Menu} from "antd";
+import {Habits} from "@/app/Habits";
 
 const {Header, Content, Footer} = Layout;
-
 export default function Home() {
 
     const menuItems = [
@@ -36,16 +32,7 @@ export default function Home() {
               <Breadcrumb.Item>List</Breadcrumb.Item>
               <Breadcrumb.Item>App</Breadcrumb.Item>
             </Breadcrumb> */}
-                <Row gutter={[16, 24]}>
-                    <Col span={17}>
-                        <Title>Hey there, Michelle!</Title>
-                        <Quotes/>
-                        <WeeklyHabits/>
-                    </Col>
-                    <Col span={7}>
-                        <DailyHabits/>
-                    </Col>
-                </Row>
+                <Habits/>
             </Content>
             <Footer style={{textAlign: "center"}}>
                 Johannes Ströbele ©2023, all rights reserved

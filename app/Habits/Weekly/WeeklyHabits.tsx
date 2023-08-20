@@ -3,8 +3,13 @@ import React from "react";
 import {Divider, Space} from "antd";
 import {WeeklyProgressRowData} from "@/app/Habits/Weekly/WeeklyProgressRowData";
 import {WeeklyProgressColDef} from "@/app/Habits/Weekly/WeeklyProgressColDef";
+import {Habit} from "@/app/types";
 
-export const WeeklyHabits: React.FC = () => {
+interface WeeklyHabitsProps {
+    habits: Habit[]
+}
+
+export const WeeklyHabits: React.FC<WeeklyHabitsProps> = ({habits}: WeeklyHabitsProps) => {
     // getDatesByWeekdayAndCalendarWeek('Thursday', 34, habit?.doneHistory);
 
     return (

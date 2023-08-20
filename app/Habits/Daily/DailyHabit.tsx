@@ -10,7 +10,8 @@ interface DailyHabitProps {
 
 export const DailyHabit = ({habit}: DailyHabitProps) => {
     const Buttons = (): React.JSX.Element => {
-        if (habit.doneHistory && habit.doneHistory.length > 0 && habit.doneHistory.some(date => new Date(date).toDateString() === new Date().toDateString())) {
+        const isDone = habit.doneHistory && habit.doneHistory.length > 0 && habit.doneHistory.some(date => new Date(date).toDateString() === new Date().toDateString())
+        if (isDone) {
             return (<Row>
                 <Col span={12}>
                     <Button><CheckOutlined style={{color: 'blue'}}/>Completed</Button>
