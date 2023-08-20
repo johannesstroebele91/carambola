@@ -3,7 +3,7 @@
 // TODO use modules if css is necessary: import styles from './page.module.css'
 import React from "react";
 import {Layout, Menu} from "antd";
-import {Habits} from "@/app/Habits";
+import {Habits} from "@/app/Habits/Habits";
 
 const {Header, Content, Footer} = Layout;
 export default function Home() {

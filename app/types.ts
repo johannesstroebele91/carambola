@@ -1,3 +1,5 @@
+import {Moment} from "moment";
+
 export interface Quote {
     id: number;
     author: string;
@@ -7,5 +9,6 @@ export interface Quote {
 export interface Habit {
     id: number;
     name: string;
-    doneHistory?: Date[];
+    weeklyGoal: number;
+    doneHistory?: Moment[];
 }

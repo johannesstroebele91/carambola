@@ -1,6 +1,6 @@
 import {Col, Divider, Pagination, Row} from "antd";
 import Title from "antd/es/typography/Title";
-import {Quotes} from "@/app/Quotes";
+import {Quotes} from "@/app/Habits/Quotes";
 import {WeeklyHabits} from "@/app/Habits/Weekly/WeeklyHabits";
 import {DailyHabits} from "@/app/Habits/Daily/DailyHabits";
 import React, {useEffect, useState} from "react";

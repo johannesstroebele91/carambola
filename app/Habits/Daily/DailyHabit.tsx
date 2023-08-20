@@ -3,14 +3,16 @@ import {CheckOutlined, EditOutlined, RedoOutlined} from "@ant-design/icons";
 import {Button, Card, Col, Row, Typography} from "antd";
 import React from "react";
 import {Habit} from "@/app/types";
+import moment from "moment/moment";
 
 const {Text} = Typography;
 
 interface DailyHabitProps {
-    habit: Habit
+    habit: Habit,
+    date: moment.Moment
 }
 
-export const DailyHabit = ({habit}: DailyHabitProps) => {
+export const DailyHabit = ({habit, date}: DailyHabitProps) => {
 
     // TODO write logic to mutate habits in the database
     function setHabitDone(habit: Habit) {
@@ -30,7 +32,7 @@ export const DailyHabit = ({habit}: DailyHabitProps) => {
     }
 
     const Buttons = (): React.JSX.Element => {
-        const isDone = habit.doneHistory && habit.doneHistory.length > 0 && habit.doneHistory.some(date => new Date(date).toDateString() === new Date().toDateString())
+        const isDone = habit.doneHistory && habit.doneHistory.length > 0 && habit?.doneHistory?.some(done => moment(done).day() === moment(date).day())
         if (isDone) {
             return (<Row>
                 <Col span={12} style={{lineHeight: 2.3}}>
