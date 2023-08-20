@@ -1,10 +1,11 @@
-import {Col, Row} from "antd";
+import {Col, Divider, Pagination, Row} from "antd";
 import Title from "antd/es/typography/Title";
 import {Quotes} from "@/app/Quotes";
 import {WeeklyHabits} from "@/app/Habits/Weekly/WeeklyHabits";
 import {DailyHabits} from "@/app/Habits/Daily/DailyHabits";
 import React, {useEffect, useState} from "react";
 import {Habit} from "@/app/types";
+import {getCalendarWeek} from "@/app/utility";
 
 export const Habits = () => {
     const [habits, setHabits] = useState<Habit[]>([]);
@@ -17,12 +18,25 @@ export const Habits = () => {
         };
         fetchData();
     }, []);
+    const currentWeek = getCalendarWeek(new Date());
 
+    const onChange = () => {
+    };
     return (
         <Row gutter={[16, 24]}>
             <Col span={17}>
-                <Title>Hey there, Michelle!</Title>
+                <Title style={{marginTop: 24}}>Hey there, Michelle!</Title>
                 <Quotes/>
+                <Row gutter={[16, 24]}>
+                    <Col span={18}>
+                        <Divider dashed/>
+                    </Col>
+                    <Col span={6}>
+                        <Pagination simple defaultCurrent={currentWeek * 10} total={currentWeek * 10}
+                                    onChange={onChange}/>
+                    </Col>
+                </Row>
+
                 <WeeklyHabits habits={habits}/>
             </Col>
             <Col span={7}>
