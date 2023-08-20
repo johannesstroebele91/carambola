@@ -15,7 +15,7 @@ export const Quotes = () => {
             const data: Quote[] = await response.json();
             setQuotes(data);
         };
-        fetchData().then(() => console.log('Fetched quotes successfully')); // TODO delete later
+        fetchData();
     }, []);
 
     if (!quotes) {

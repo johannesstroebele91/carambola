@@ -16,9 +16,8 @@ export const DailyHabits: React.FC = () => {
             const data: Habit[] = await response.json();
             setHabits(data);
         };
-        fetchData().then(() => console.log('Fetched quotes successfully')); // TODO delete later
+        fetchData();
     }, []);
-    console.log(habits)
 
     const today = moment().format("dddd, MMM. D");
 
