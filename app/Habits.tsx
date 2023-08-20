@@ -23,20 +23,19 @@ export const Habits = () => {
     const onChange = () => {
     };
     return (
-        <Row gutter={[16, 24]}>
+        <Row gutter={[16, 24]} style={{marginTop: 24}}>
             <Col span={17}>
-                <Title style={{marginTop: 24}}>Hey there, Michelle!</Title>
+                <Title>Hey there, Michelle!</Title>
                 <Quotes/>
-                <Row gutter={[16, 24]}>
-                    <Col span={18}>
+                <Row gutter={[16, 24]} align="middle">
+                    <Col flex="auto">
                         <Divider dashed/>
                     </Col>
-                    <Col span={6}>
+                    <Col flex="210px">
                         <Pagination simple defaultCurrent={currentWeek * 10} total={currentWeek * 10}
                                     onChange={onChange}/>
                     </Col>
                 </Row>
-
                 <WeeklyHabits habits={habits}/>
             </Col>
             <Col span={7}>

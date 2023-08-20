@@ -13,7 +13,7 @@ export const WeeklyHabits: React.FC<WeeklyHabitsProps> = ({habits}: WeeklyHabits
     // getDatesByWeekdayAndCalendarWeek('Thursday', 34, habit?.doneHistory);
     return (
         <>
-            <Space direction="vertical" size="middle" style={{display: 'flex'}}>
+            <Space direction="vertical" size="large" style={{display: 'flex'}}>
                 <WeeklyProgressColDef/>
                 {habits.map(habit => (
                     <WeeklyProgressRowData key={habit.id} habit={habit}/>
